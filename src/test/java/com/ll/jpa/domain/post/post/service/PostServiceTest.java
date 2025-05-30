@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -14,6 +15,7 @@ class PostServiceTest {
 
     @Test
     @DisplayName("글 2개 생성")
+    @Transactional
     void t1() {
         postService.write("title1", "content1");
         postService.write("title2", "content2");
